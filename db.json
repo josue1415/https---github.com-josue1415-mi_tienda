@@ -7,78 +7,6 @@
       "telefono": "",
       "correo": "",
       "nit": ""
-    },
-    {
-      "id": 2,
-      "nombres": "josue",
-      "apellidos": "cornejo",
-      "telefono": "2323-2323",
-      "correo": "joause@hahsd.com",
-      "nit": "1245-452122-454-5"
-    },
-    {
-      "id": 3,
-      "nombres": "prueba",
-      "apellidos": "prueba",
-      "telefono": "4545-4545",
-      "correo": "jsu@yahoo,es",
-      "nit": "1212-121245-454-5"
-    },
-    {
-      "id": 4,
-      "nombres": "asdf",
-      "apellidos": "asdf",
-      "telefono": "1231-3132",
-      "correo": "josue@jajas.com",
-      "nit": "1231-231231-231-2"
-    },
-    {
-      "id": 5,
-      "nombres": "josue",
-      "apellidos": "cornejo",
-      "telefono": "78666340",
-      "correo": "asdf@jasd.com",
-      "nit": "1111-111111-111-1"
-    },
-    {
-      "id": 6,
-      "nombres": "jejee",
-      "apellidos": "jejeje",
-      "telefono": "5555-5555",
-      "correo": "555555",
-      "nit": "5"
-    },
-    {
-      "id": 7,
-      "nombres": "finañ",
-      "apellidos": "final",
-      "telefono": "5555-5555",
-      "correo": "a",
-      "nit": "5555-555555-555-5"
-    },
-    {
-      "id": 8,
-      "nombres": "asdfa",
-      "apellidos": "adsfasdf",
-      "telefono": "1222-2222",
-      "correo": "joasd@a.com",
-      "nit": "5555-555555-555-5"
-    },
-    {
-      "id": 9,
-      "nombres": "caca",
-      "apellidos": "caca",
-      "telefono": "caca",
-      "correo": "caca",
-      "nit": "ca"
-    },
-    {
-      "id": ".",
-      "nombres": "asdfa.",
-      "apellidos": "asdfsadf.",
-      "telefono": "asdf-asdf",
-      "correo": "asdf",
-      "nit": "a"
     }
   ],
   "ordenes": [
@@ -88,27 +16,6 @@
       "id": "1",
       "cantidad": "1",
       "fecha": ""
-    },
-    {
-      "idProducto": 1,
-      "idCliente": 4,
-      "cantidad": 1,
-      "fecha": "",
-      "id": "KNGxkPe"
-    },
-    {
-      "idProducto": 1,
-      "idCliente": 3,
-      "cantidad": 1,
-      "fecha": "2021-09-30T19:57:57.334Z",
-      "id": "hd2On37"
-    },
-    {
-      "idProducto": 1,
-      "idCliente": "1",
-      "cantidad": 1,
-      "fecha": "2021-10-01T00:38:39.903Z",
-      "id": "iykF1SA"
     }
   ],
   "productos": [
@@ -117,30 +24,6 @@
       "nombre": "Debora",
       "descripcion": "Guardado",
       "precio": "10"
-    },
-    {
-      "idCliente": "",
-      "cantidad": "",
-      "fecha": "",
-      "id": "3XAyetN"
-    },
-    {
-      "nombre": "nombre",
-      "descripcion": "descriopcopm",
-      "precio": 20,
-      "id": "B8VbKdo"
-    },
-    {
-      "nombre": "asdf",
-      "descripcion": "asdf",
-      "precio": "",
-      "id": "IGLZXDB"
-    },
-    {
-      "nombre": "22",
-      "descripcion": "22",
-      "precio": 22,
-      "id": "rbv5xYH"
     }
   ]
 }
