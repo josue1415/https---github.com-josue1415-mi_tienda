@@ -1,0 +1,10 @@
+table {
+    width: 100%;
+  }
+
+  .align-btn{
+    margin-left: 25px;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }

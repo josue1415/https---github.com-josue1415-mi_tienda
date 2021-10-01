@@ -1,0 +1,44 @@
+
+
+<button [routerLink]="['productos/agregar']" class="align-btn" mat-raised-button color="primary">Agregar cliente</button>
+
+<div *ngIf="dataSource$ | async as data">
+<table mat-table [dataSource]="data" class="mat-elevation-z8">
+
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- nombres Column -->
+    <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre</th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+    </ng-container>
+
+    <!-- apellidos Column -->
+    <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef> Descripción </th>
+        <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+    </ng-container>
+
+    <!-- telefono Column -->
+    <ng-container matColumnDef="precio">
+        <th mat-header-cell *matHeaderCellDef> precio </th>
+        <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+    </ng-container>
+
+    <!-- actions Column -->
+    <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Acción </th>
+        <td mat-cell *matCellDef="let element"> 
+            <button [routerLink]="['productos/',element.id]" mat-raised-button><mat-icon>remove_red_eye</mat-icon>
+            </button> 
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>

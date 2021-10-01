@@ -1,0 +1,49 @@
+ 
+  <div class="content" role="main" style="margin-top: -60px;">
+  
+    <div class="card-container">
+   
+      <mat-card class="card">
+  
+        <mat-card-header>
+          <mat-card-title>CLIENTES</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../assets/img/clientes.png" alt="clientes">
+  
+        <mat-card-actions>
+          <button (click)="showMainCliente()" mat-raised-button color="primary">Listar/Agregar
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+            </svg>
+          </button>
+        </mat-card-actions>
+  
+      </mat-card>
+  
+      <mat-card class="card">
+  
+        <mat-card-header>
+          <mat-card-title>PRODUCTOS</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../assets/img/producto.png" alt="clientes">
+  
+        <mat-card-actions>
+          <button (click)="showProducto()" mat-raised-button color="primary">Listar/Agregar</button>
+        </mat-card-actions>
+  
+      </mat-card>
+  
+      <mat-card class="card">
+  
+        <mat-card-header>
+          <mat-card-title>ORDENES</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../assets/img/orden.png" alt="Clientes">
+        <mat-card-actions style="float: inline-end;">
+          <button (click)="showOrden()" mat-raised-button color="primary">Realizar Orden</button>
+        </mat-card-actions>
+  
+      </mat-card>
+  
+    </div>
+  </div>

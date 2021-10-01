@@ -1,0 +1,19 @@
+<mat-card class="card">
+    <h2>ID: {{dataSource$.id}}</h2>
+    <hr>
+    <h2>Nombre</h2>
+    <h3>{{dataSource$.nombres}}</h3>
+    <hr>
+    <h2>Apellidos</h2>
+    <h3>{{dataSource$.apellidos}}</h3>
+    <hr>
+    <h2>Teléfono</h2>
+    <h3>{{dataSource$.telefono}}</h3>
+    <hr>
+    <h2>Correo </h2>
+    <h3>{{dataSource$.correo}}</h3>
+    <hr>
+    <h2>NIT</h2>
+    <h3>{{dataSource$.nit}}</h3>
+    <button mat-raised-button color="accent" [routerLink]="['']">Inicio</button>
+</mat-card>

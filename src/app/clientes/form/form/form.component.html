@@ -1,0 +1,101 @@
+<mat-card class="card">
+    <form [formGroup]="formCliente" (ngSubmit)="submit()">
+
+        <!-- input nombres -->
+        <div class="centrar">
+            <div class="one">
+                <p>Nombre:</p>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Ingrese nombre completo</mat-label>
+                    <input matInput formControlName="nombres" autocomplete="off" required>
+                </mat-form-field>
+                <div *ngIf="nombres?.invalid && (nombres?.dirty || nombres?.touched)" class="alert alert-danger">
+
+                    <div *ngIf="nombres?.errors?.required">
+                        El nombre es requerido.
+                    </div>
+                    <div *ngIf="nombres?.errors?.minlength">
+                        El nombre requiere al menos 4 carácteres.
+                    </div>
+                </div>
+            </div>
+            <div class="two">
+                <!-- input apellidos -->
+                <p>Apellidos:</p>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Ingrese Apellidos completos</mat-label>
+                    <input matInput formControlName="apellidos" autocomplete="off" required>
+                </mat-form-field>
+                <div *ngIf="apellidos?.invalid && (apellidos?.dirty || apellidos?.touched)" class="alert alert-danger">
+                    <div *ngIf="apellidos?.errors?.required">
+                        El Apellidos es requerido.
+                    </div>
+                    <div *ngIf="apellidos?.errors?.minlength">
+                        Los Apellidos requieren al menos 4 carácteres.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="centrar">
+            <div class="one">
+                <!-- input teléfono -->
+                <p>Telefono:</p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Ingrese número telefónico.</mat-label>
+                    <input [value]=" telefono?.value | phone" type="tel" maxlength="9" placeholder="####-####" matInput
+                        formControlName="telefono" autocomplete="off" required>
+                </mat-form-field>
+                <div *ngIf="telefono?.invalid && (telefono?.dirty || telefono?.touched)" class="alert alert-danger">
+                    <div *ngIf="telefono?.errors?.required">
+                        Campo obligatorio*
+                    </div>
+                    <div *ngIf="telefono?.errors?.pattern">
+                        Formato: 1234-1234
+                    </div>
+                </div>
+            </div>
+
+            <div class="two">
+                <!-- input correo -->
+                <p>Correo:</p>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Ingrese email</mat-label>
+                    <input matInput formControlName="correo" autocomplete="off" required>
+                </mat-form-field>
+                <div *ngIf="correo?.invalid && (correo?.dirty || correo?.touched)" class="alert alert-danger">
+                    <div *ngIf="correo?.errors?.required">
+                        Correo es requerido.
+                    </div>
+                    <div *ngIf="correo?.errors?.mail">
+                        Correo es inválido.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- input nit -->
+        <div class="margin-left-50">
+            <p>Nit:</p>
+            <mat-form-field appearance="fill">
+                <mat-label>Ingrese número NIT</mat-label>
+                <input [value]=" nit?.value | nit" type="text" maxlength="17" placeholder="####-######-###-#" matInput
+                    formControlName="nit" autocomplete="off" required>
+            </mat-form-field>
+            <div *ngIf="nit?.invalid && (nit?.dirty || nit?.touched)" class="alert alert-danger">
+                <div *ngIf="nit?.errors?.required">
+                    NIT es requerido.
+                </div>
+                <div *ngIf="nit?.errors?.pattern">
+                    Formato: 1234-123456-123-1
+                </div>
+            </div>
+        </div>
+
+        <!-- Btn Submit -->
+        <br><br>
+        <button mat-flat-button color="primary" type="submit">Confirmar</button>
+        &nbsp;
+        <button mat-raised-button type="button" (click)="return()">Regresar</button>
+    </form>
+</mat-card>

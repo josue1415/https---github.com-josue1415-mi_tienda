@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@1,532;1,900&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+span {
+    font-family: 'Bitter', serif;
+}
+
+.slanted-div {
+    position: relative;
+    padding: 100px 0;
+    background: linear-gradient(-45deg, #9dd8e7, #7ab6c5, #589fb1, #1c5361);
+    background-size: 400% 400%;
+    animation: gradient 16s linear infinite;
+    overflow: visible;
+    z-index: -1;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* where the magic happens */
+
+.slanted-div:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    bottom: 0;
+    transform-origin: left bottom;
+    transform: skewY(3deg);
+}
+
+/* displays the content inside, as these settings in the parent breaks the effect */
+
+.slanted-div div {
+    text-align: center;
+    font-size: 2.5em;
+    line-height: 1.5;
+}

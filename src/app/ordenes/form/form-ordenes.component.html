@@ -1,0 +1,73 @@
+<mat-card class="card">
+    <form [formGroup]="form" (ngSubmit)="submit()" class="centrar">
+
+        <!-- input cliente -->
+        <p>Cliente:</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Cliente</mat-label>
+            <mat-select formControlName="idCliente" required>
+                <mat-option>Seleccione un cliente...</mat-option>
+                <mat-option *ngFor="let cliente of dataSourceCliente$ | async" [value]="cliente.id">
+                   <!-- <input type="number" hidden formControlName="idCliente" value="{{cliente.id}}"> -->
+                    {{cliente.nombres}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="idCliente?.hasError('required')">Seleccione un cliente.</mat-error>
+        </mat-form-field>
+
+        <!-- Producto input -->
+        <br>
+        <button type="button" mat-flat-button color="accent" (click)="addProduct()">Agregar Producto</button>
+        <ng-container formArrayName="idProducto" class="card">
+            <ng-container *ngFor="let prodForm of idProducto.controls; let i=index;">
+                <div [formGroup]="form">
+                <mat-form-field appearance="fill">
+                    <mat-label>Producto</mat-label>
+                    <mat-select formArrayName="idProducto" formControlName="idProducto" required>
+                        <mat-option>Seleccione un producto...</mat-option>
+                        <mat-option *ngFor="let prod of dataSourceProd$ | async" [value]="prod">
+                            <input type="number" hidden formControlName="idProducto" value="{{prod.id}}">
+                            Producto:{{prod.nombre}}, Precio:{{prod.precio}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="idProducto?.hasError('required')">Seleccione un producto.</mat-error>
+                </mat-form-field>
+            </div>
+            </ng-container>
+        </ng-container>
+
+
+        <br><br>
+        <!-- input cantidad -->
+        <p>Cantidad:</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Cantidad</mat-label>
+            <input type="number" formControlName="cantidad" matInput minlength="1" placeholder="0"
+                value="1" required>
+        </mat-form-field>
+        <div *ngIf="cantidad?.invalid && (cantidad?.dirty || cantidad?.touched)" class="alert alert-danger">
+            <div *ngIf="cantidad?.errors?.required">
+                La cantidad es requerida.
+            </div>
+            <div *ngIf="cantidad?.errors?.minlength">
+                La cantidad requiere al menos 1 carácter.
+            </div>
+        </div>
+        <br>
+
+        <!-- input fecha -->
+        <p>Fecha de orden:</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Fecha actual</mat-label>
+            <input matInput [matDatepicker]="picker1" [formControl]="date">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <!-- Btn Submit -->
+        <br><br>
+        <button mat-flat-button color="primary" type="submit">Confirmar</button> &nbsp;
+        <button mat-raised-button color="accent" [routerLink]="['']">Inicio</button>
+
+    </form>
+</mat-card>

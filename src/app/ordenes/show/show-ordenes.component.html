@@ -1,0 +1,36 @@
+
+
+<button [routerLink]="['ordenes/agregar']" class="align-btn" mat-raised-button color="primary">Agregar orden</button>
+
+<div *ngIf="dataSource$ | async as data">
+<table mat-table [dataSource]="data" class="mat-elevation-z8">
+
+    <!-- nombres Column -->
+    <ng-container matColumnDef="cliente">
+        <th mat-header-cell *matHeaderCellDef> Cliente ID</th>
+        <td mat-cell *matCellDef="let element"> {{element.idCliente}} </td>
+    </ng-container>
+
+    <!-- apellidos Column -->
+    <ng-container matColumnDef="producto">
+        <th mat-header-cell *matHeaderCellDef> Producto ID</th>
+        <td mat-cell *matCellDef="let element"> {{element.idProducto}} </td>
+    </ng-container>
+
+    <!-- telefono Column -->
+    <ng-container matColumnDef="cantidad">
+        <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+        <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
+    </ng-container>
+
+    <!-- fecha Column -->
+    <ng-container matColumnDef="fecha">
+        <th mat-header-cell *matHeaderCellDef> Fecha </th>
+        <td mat-cell *matCellDef="let element"> {{element.fecha | date: 'dd-MM-yyyy'}} </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>
